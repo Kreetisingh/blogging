@@ -1,0 +1,125 @@
+#include<iostream>
+#include<stdio.h>
+using namespace std;
+
+// customer class
+class customer
+{
+        char name[20];
+        long phone_no;
+    public:
+        void account_details()
+        {
+                cout<<"\n Input Customer name :  ";
+                cin>>name;
+                cout<<"\n Input Mobile no. :  ";
+                cin>>phone_no;
+        }
+        void display()
+        {
+                cout<<"\n Customer details \n";
+                cout<<"\n -------------------------------------\n";
+                cout<<"\n Customer Name          :  "<<name;
+                cout<<"\n Customer MObile No.    :  "<<phone_no;      
+        }
+};
+
+// account class
+class account
+{
+  char customer_name[20];
+  int  account_no;
+  char account_type[20];
+public:
+   void get_account_info()
+   {
+       cout<<"\n Input Customer Name :";
+       cin>>cust_name;
+       cout<<"Enter Account no. :";
+       cin>>acc_no;
+       cout<<"Enter Account type :";
+       cin>>account_type;
+   }
+   void display_account_info()
+   {
+       cout<<"\n Customer name : "<<customer_name;
+       cout<<"\n Account no.  : "<<account_no;
+       cout<<"\n Account type    : "<<account_type;
+   }
+};
+
+// base class
+
+class BB 
+{ 
+    int minimum_interest_rate, minimum_balance_allowed, maximum_withdrawal_limit;
+	BB(min_interest,min_balance,max_withdrawal){
+	    minimum_interest_rate=min_interest;
+	    minimum_balance_allowed=min_balance;
+	    maximum_withdrawal_limit=max_withdrawal;
+	} 
+	public:
+    	void setMinimum_interest_rate(int s) {
+      		minimum_interest_rate = s;
+    	}
+    	int getMinimum_interest_rate() {
+      		return minimum_interest_rate;
+    	}
+    	public:
+    	void setMinimum_balance_allowed(int b) {
+      		minimum_balance_allowed = b;
+    	}
+    	int getMinimum_balance_allowed() {
+      		return minimum_balance_allowed;
+    	}
+    	public:
+    	void setMaximum_withdrawal_limit(int m) {
+      		maximum_withdrawal_limit = m;
+    	}
+    	int getMinimum_balance_allowed() {
+      		return maximum_withdrawal_limit;
+    	}
+}; 
+
+// child classes
+
+class IBBL : public BB 
+{ 
+	int min_interest;
+	public:
+    	void setMinimum_interest_rate(int val) {
+      		min_interest=val;
+    	} 
+}; 
+
+class SIBL : public BB 
+{ 
+	int min_balance;
+	public:
+    	void setMinimum_balance_allowed(int bal) {
+      		min_balance = bal;
+    	}
+}; 
+
+// main methods
+int main()
+{
+        borrow *b1;
+        int n,i;
+        cout<<"\n Input number of Customer Details you want to check :  ";
+        cin>>n;
+        b1=new borrow[n];
+        for(i=0; i<n; i++)
+        {
+                1[i].account_details();
+                b1[i].account_details();
+                b1[i].account_details();
+        }
+        for(i=0; i<n; i++)
+        {
+                b1[i].display();
+                b1[i].display();
+                b1[i].display();
+        }
+        return 0;
+}
